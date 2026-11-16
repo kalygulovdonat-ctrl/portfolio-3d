@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калыгулов Нуртилек — 3D-сайты</title>
+<meta name="description" content="Девять 3D-сайтов-концептов: автошкола, магазин, жилой дом, фестиваль, треки, косметика, часы, кофе, галерея. Каждый открывается и работает прямо на странице.">
+<meta name="theme-color" content="#0d0d0f">
+<meta property="og:title" content="Калыгулов Нуртилек — 3D-сайты">
+<meta property="og:description" content="Девять работающих 3D-сайтов. Откройте любой прямо на странице.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/dom.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body class="is-loading">
+<a class="skip" href="#all">Перейти к списку работ</a>
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<header class="top">
+  <a class="logo" href="#hero"><span data-me="name">Калыгулов Нуртилек</span><i>3D-сайты</i></a>
+  <nav class="top__nav" aria-label="Основная навигация">
+    <a href="#works">Работы</a>
+    <a href="#how">Подход</a>
+    <a href="#brief">Бриф</a>
+  </nav>
+  <a class="btn btn--small" data-me="wa" href="https://wa.me/996220709230" target="_blank" rel="noopener">Написать в WhatsApp</a>
+</header>
+
+<main>
+  <section class="sec sec--hero" id="hero">
+    <div class="copy">
+      <p class="mono">Портфолио · 9 работ · 9 разных приёмов</p>
+      <h1>Сайты, которые хочется <em>покрутить</em></h1>
+      <p class="lead">Ниже не&nbsp;картинки. Каждая работа открывается и&nbsp;работает прямо на&nbsp;этой странице — на&nbsp;компьютере и&nbsp;на&nbsp;телефоне.</p>
+      <div class="actions">
+        <a class="btn" href="#works">Смотреть работы ↓</a>
+        <a class="link" href="#brief">Собрать задачу за&nbsp;минуту</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАРУСЕЛЬ -->
+  <section class="works" id="works" aria-label="Работы">
+    <div class="works__pin">
+      <article class="info" id="info" aria-live="polite">
+        <p class="mono info__n"><b id="iNum">01</b> / 09 <span id="iGenre"></span></p>
+        <h2 id="iName"></h2>
+        <dl>
+          <dt>Приём</dt><dd id="iTech"></dd>
+          <dt>Попробуйте</dt><dd id="iTry"></dd>
+        </dl>
+        <div class="actions">
+          <button class="btn" id="iLive" type="button">Открыть вживую</button>
+          <a class="link" id="iLink" target="_blank" rel="noopener">В новой вкладке ↗</a>
+        </div>
+      </article>
+      <ol class="rail" id="rail" aria-label="Список работ"></ol>
+      <p class="mono works__hint" aria-hidden="true">Скролл или перетаскивание — следующая работа</p>
+    </div>
+  </section>
+
+  <section class="sec sec--solid" id="all">
+    <header class="head">
+      <p class="mono">Все работы</p>
+      <h2>Девять сайтов, <em>ни&nbsp;одного шаблона</em></h2>
+      <p class="honest">Это концепты: названия, цены и&nbsp;тексты в&nbsp;них придуманы. Они сделаны, чтобы показать приёмы, а&nbsp;не&nbsp;список клиентов.</p>
+    </header>
+    <ul class="grid" id="grid"></ul>
+  </section>
+
+  <section class="sec sec--solid" id="how">
+    <header class="head">
+      <p class="mono">Подход</p>
+      <h2>Что получает <em>заказчик</em></h2>
+    </header>
+    <ul class="feats">
+      <li><b>3D по&nbsp;задаче</b><span>Модель товара, макет дома, маршрут на&nbsp;карте — то, что помогает продать, а&nbsp;не&nbsp;просто вращается.</span></li>
+      <li><b>Работает на&nbsp;телефоне</b><span>Каждый сайт перестраивается под узкий экран. Проверьте сами: в&nbsp;живом превью есть кнопка «Телефон».</span></li>
+      <li><b>Сайт без 3D тоже сайт</b><span>Если устройство не&nbsp;тянет графику, тексты, цены и&nbsp;формы остаются на&nbsp;месте.</span></li>
+      <li><b>Интерактив с&nbsp;пользой</b><span>Конфигуратор, подбор, калькулятор подписки: посетитель не&nbsp;читает, а&nbsp;выбирает.</span></li>
+    </ul>
+    <ol class="steps">
+      <li><span class="mono">01</span><h3>Бриф</h3><p>Разбираемся, что продаём и&nbsp;кому. Хватит десяти минут и&nbsp;формы ниже.</p></li>
+      <li><span class="mono">02</span><h3>Концепт</h3><p>Идея главного экрана и&nbsp;3D-приёма. Показываю на&nbsp;живом черновике, а&nbsp;не&nbsp;на&nbsp;словах.</p></li>
+      <li><span class="mono">03</span><h3>Сборка</h3><p>Разделы, тексты, адаптив, формы. Ссылка на&nbsp;рабочую версию — с&nbsp;первого дня.</p></li>
+      <li><span class="mono">04</span><h3>Запуск</h3><p>Домен, подключение заявок, проверка на&nbsp;телефонах. Отдаю код и&nbsp;инструкцию.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec sec--solid" id="brief">
+    <header class="head">
+      <p class="mono">Бриф</p>
+      <h2>Соберите задачу — получите <em>готовое сообщение</em></h2>
+    </header>
+    <div class="brief">
+      <form class="brief__form" id="briefForm">
+        <fieldset><legend>Что нужно</legend><div class="chips" id="bType"></div></fieldset>
+        <fieldset><legend>Что важно <small>можно несколько</small></legend><div class="chips" id="bFeat"></div></fieldset>
+        <fieldset><legend>Срок</legend><div class="chips" id="bTime"></div></fieldset>
+        <label class="field"><span>Пара слов о&nbsp;проекте</span><textarea id="bText" rows="3" placeholder="Например: кофейня в центре, хотим сайт с меню и бронью столика"></textarea></label>
+        <label class="field"><span>Как к&nbsp;вам обращаться</span><input id="bName" type="text" autocomplete="given-name"></label>
+      </form>
+      <div class="brief__out">
+        <p class="mono">Ваше сообщение</p>
+        <pre id="bOut" tabindex="0"></pre>
+        <div class="actions">
+          <a class="btn" id="bWa" target="_blank" rel="noopener">Отправить в&nbsp;WhatsApp ↗</a>
+          <button class="link" id="bCopy" type="button">Скопировать текст</button>
+          <a class="link" id="bTg" target="_blank" rel="noopener" hidden>Написать в&nbsp;Telegram ↗</a>
+        </div>
+        <p class="mono brief__note" id="bNote" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="foot__big">Есть идея? <a href="#brief">Давайте её покрутим.</a></p>
+    <p class="mono"><span data-me="name">Калыгулов Нуртилек</span> · WhatsApp: <a data-me="phone" href="https://wa.me/996220709230" target="_blank" rel="noopener">+996 220 709 230</a> · <a data-me="gh" href="https://github.com/kalygulovdonat-ctrl" target="_blank" rel="noopener">GitHub ↗</a></p>
+  </footer>
+</main>
+
+<!-- ЖИВОЕ ПРЕВЬЮ -->
+<div class="live" id="live" role="dialog" aria-modal="true" aria-labelledby="liveTitle" hidden>
+  <header class="live__bar">
+    <p class="mono" id="liveTitle"></p>
+    <div class="live__dev" role="group" aria-label="Размер экрана">
+      <button type="button" data-dev="desk" aria-pressed="true">Компьютер</button>
+      <button type="button" data-dev="phone" aria-pressed="false">Телефон</button>
+    </div>
+    <a class="link" id="liveOpen" target="_blank" rel="noopener">В новой вкладке ↗</a>
+    <button class="live__x" id="liveClose" type="button" aria-label="Закрыть превью">×</button>
+  </header>
+  <div class="live__stage"><iframe id="liveFrame" title="Живое превью сайта" loading="lazy"></iframe></div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
