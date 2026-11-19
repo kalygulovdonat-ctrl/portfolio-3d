@@ -23,7 +23,8 @@ const WORKS = [
   { id: 'watch', name: 'Механика', genre: 'Часы', color: '#c9a45c', tech: 'Модель часов из деталей: стрелки идут по вашему времени.', try: 'Соберите свою версию в конфигураторе.' },
   { id: 'coffee', name: 'Зерно', genre: 'Подписка', color: '#e2452b', tech: '1500 зёрен перестраиваются по скроллу: вихрь, барабан, струя.', try: 'Покрутите ползунок обжарки — зёрна потемнеют.' },
   { id: 'gallery', name: 'Зал 3', genre: 'Выставка', color: '#5c6cff', tech: 'Прогулка по галерее: каждая картина рисует себя сама.', try: 'Дойдите до кассы и купите билет.' },
-].map((w, i) => ({ ...w, i, url: `${BASE}${w.id}-3d/`, repo: `https://github.com/${ME.github}/${w.id}-3d`, img: `img/${w.id}.jpg` }));
+  { id: 'kegl', name: 'Кегль', genre: 'Фестиваль шрифтов', color: '#ff3b1f', tech: 'Кинетическая типографика на React: буквы прорезаются, шрифт меняет толщину под курсором, теги падают с физикой.', try: 'Поводите курсором по словам «Подвиньте курсор».', url: `${BASE}kegl/`, repo: `https://github.com/${ME.github}/kegl` },
+].map((w, i) => ({ ...w, i, url: w.url || `${BASE}${w.id}-3d/`, repo: w.repo || `https://github.com/${ME.github}/${w.id}-3d`, img: `img/${w.id}.jpg` }));
 const N = WORKS.length;
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
