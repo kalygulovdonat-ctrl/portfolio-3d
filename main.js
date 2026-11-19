@@ -150,8 +150,11 @@ function init() {
   const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.1, 100);
   camera.position.set(0, 0.5, 11.5); camera.lookAt(0, 0, 0);
 
-  const R = 4.7, STEP = (Math.PI * 2) / N, W = 3.3, H = W / 1.6;
+  const STEP = (Math.PI * 2) / N, W = 3.3, H = W / 1.6;
+  // радиус от числа работ: соседние экраны (с запасом на увеличение активного) не врезаются друг в друга
+  const R = Math.max(4.7, (W * 1.14) / (2 * Math.tan(Math.PI / N)));
   const ring = new THREE.Group(), rig = new THREE.Group(); rig.add(ring); scene.add(rig);
+  ring.position.z = -(R - 4.7); // передний экран остаётся на прежнем расстоянии от камеры
   const loader = new THREE.TextureLoader(), screens = [], plane = new THREE.PlaneGeometry(W, H);
   const backMat = new THREE.MeshBasicMaterial({ color: '#1b1b20', side: THREE.DoubleSide });
   WORKS.forEach((w, i) => {
@@ -201,8 +204,8 @@ function init() {
     rot = lerp(rot, -(state.active + idle) * STEP, k(4.5));
     ring.rotation.y = rot;
     px = lerp(px, portrait ? 0 : lerp(3.5, -1.7, inWorks) * Math.min(1, camera.aspect / 1.7), k(3));
-    py = lerp(py, portrait ? lerp(2.2, 1.7, inWorks) : 0.1, k(3));
-    sc = lerp(sc, portrait ? 0.56 : lerp(0.68, 0.88, inWorks), k(3));
+    py = lerp(py, portrait ? lerp(2.2, 2.25, inWorks) : 0.1, k(3));
+    sc = lerp(sc, portrait ? 0.47 : lerp(0.68, 0.88, inWorks), k(3));
     rig.position.set(px, py, 0); rig.scale.setScalar(sc);
     rig.rotation.x = 0.07 + (reduceMotion ? 0 : Math.sin(time * 0.4) * 0.015);
     screens.forEach((s, i) => {

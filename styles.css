@@ -145,7 +145,10 @@ body:not(.is-loading) .copy > * { opacity: 1; transform: none; }
   .brief__out { position: static; }
 }
 @media (max-width: 760px) {
-  .top__nav { display: none; }
+  .top__nav, .logo i { display: none; }
+  .top { gap: 12px; }
+  .logo { white-space: nowrap; font-size: 17px; }
+  .top .btn--small { padding: 0 14px; font-size: 12.5px; white-space: nowrap; }
   .sec--hero { align-items: end; padding-bottom: 46px; }
   .works { height: 690vh; }
   .works__pin { grid-template-columns: 1fr; align-items: end; padding: 80px var(--gut) 76px; }
